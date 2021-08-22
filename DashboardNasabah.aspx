@@ -44,7 +44,7 @@
             <!-- ////////////////////////// End Jumbotron /////////////////////////-->
             <div class="row">   
                 <div class="col-sm-12">
-                    <!-- ////////////////////////// card /////////////////////////-->
+                    <!-- ////////////////////////// content /////////////////////////-->
                     <div class="card  ">
                         <div class="card-body">
                             <h1>Asuransi Aktif</h1>
@@ -62,7 +62,9 @@
                                             <p>Exp : 2021-10-12</p>
                                             <p>Max claim : 5</p>
                                             <p>Total Claim : 5</p>
+                                            <button class="btn btn-primary">Claim Asuransi</button>
                                         </div>
+                                       
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
@@ -76,6 +78,7 @@
                                             <p>Exp : 2021-10-12</p>
                                             <p>Max claim : 5</p>
                                             <p>Total Claim : 5</p>
+                                            <button class="btn btn-primary">Claim Asuransi</button>
                                         </div>
                                     </div>
                                 </div>
@@ -83,7 +86,7 @@
                             <!-- ////////////////////////// end card asuransi /////////////////////////-->
                         </div>
                     </div>
-                    <!-- ////////////////////////// end card /////////////////////////-->
+                    <!-- ////////////////////////// end content /////////////////////////-->
                 </div>
             </div>
         </div>
