@@ -10,7 +10,7 @@
     <link href="asset/bs/css/bootstrap.min.css" rel="stylesheet" />
     <link href="asset/css/jquery.dataTables.min.css" rel="stylesheet" />
     <!-- ////////////////////////// End Css /////////////////////////-->
-    <title></title>
+    <title>Register</title>
 </head>
 <body>
     <form id="form1" runat="server">

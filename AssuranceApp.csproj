@@ -82,11 +82,19 @@
     <Content Include="asset\js\jquery-3.5.1.slim.min.js" />
     <Content Include="asset\js\jquery.dataTables.min.js" />
     <Content Include="asset\js\popper.min.js" />
+    <Content Include="DashboardNasabah.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DashboardNasabah.aspx.cs">
+      <DependentUpon>DashboardNasabah.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DashboardNasabah.aspx.designer.cs">
+      <DependentUpon>DashboardNasabah.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
