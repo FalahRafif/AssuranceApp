@@ -1,21 +1,21 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Store.aspx.cs" Inherits="AssuranceApp.Store" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Notification.aspx.cs" Inherits="AssuranceApp.Notifikasi" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta charset="utf-8">
+        <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- ////////////////////////// Css /////////////////////////-->
     <link href="asset/bs/css/bootstrap.min.css" rel="stylesheet" />
     <link href="asset/css/jquery.dataTables.min.css" rel="stylesheet" />
     <!-- ////////////////////////// End Css /////////////////////////-->
-    <title>Toko</title>
+    <title>Notifikasi</title>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="container">
-             <!-- ////////////////////////// Navbar /////////////////////////-->
+            <!-- ////////////////////////// Navbar /////////////////////////-->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <a class="navbar-brand font-weight-bold" href="#">Aplikasi Asuransi</a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,51 +38,45 @@
               </div>
             </nav>
             <!-- ////////////////////////// End navbar /////////////////////////-->
-            <div class="jumbotron">
-              <h1 class="display-4">Toko Asuransi</h1>
-              <hr class="my-4">
-              <p>Pilih asuransi yang sesuai dengan kebutuhan kamu <3</p>
-            </div>
             <!-- ////////////////////////// content /////////////////////////-->
             <div class="row">
-                <!-- ////////////////////////// card asuransi /////////////////////////-->
                 <div class="col-sm-12">
-                    <div class="card mb-5">
+                    <div class="card">
                         <div class="card-body">
-                            <h3>Asuransi Kesehatan Cepat Sembuh </h3>
+                            <h1>Notifikasi</h1>
                             <hr />
-                            <h3>Info asuransi</h3>
-                                            <p>Benefit : 200000</p>
-                                            <p>Exp : 2021-10-12</p>
-                                            <p>Max claim : 5</p>
-                                            <button class="btn btn-primary">Beli Asuransi</button>
+                            <table class="table_id" class="display">
+                                <thead>
+                                    <tr>
+                                        <th>Column 1</th>
+                                        <th>Column 2</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Row 1 Data 1</td>
+                                        <td>Row 1 Data 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Row 2 Data 1</td>
+                                        <td>Row 2 Data 2</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12">
-                    <div class="card mb-5">
-                        <div class="card-body">
-                            <h3>Asuransi Kesehatan Cepat Sembuh </h3>
-                            <hr />
-                            <h3>Info asuransi</h3>
-                                            <p>Benefit : 200000</p>
-                                            <p>Exp : 2021-10-12</p>
-                                            <p>Max claim : 5</p>
-                                            <button class="btn btn-primary">Beli Asuransi</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- ////////////////////////// end card asuransi /////////////////////////-->
             </div>
             <!-- ////////////////////////// End content /////////////////////////-->
         </div>
+        
     </form>
     <!-- ////////////////////////// JS /////////////////////////-->
     <script src="asset/js/jquery-3.5.1.slim.min.js"></script>
-    <script src="asset/js/popper.min.js"></script>
     <script src="asset/bs/js/bootstrap.min.js"></script>
-    <script src="asset/js/dtTable.js"></script>
+    <script src="asset/js/popper.min.js"></script>
     <script src="asset/js/jquery.dataTables.min.js"></script>
+    <script src="asset/js/dtTable.js"></script>
     <!-- ////////////////////////// end JS /////////////////////////-->
 </body>
 </html>

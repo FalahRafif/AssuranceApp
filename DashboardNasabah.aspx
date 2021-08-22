@@ -30,6 +30,10 @@
                   <li class="nav-item active">
                     <a class="nav-link" href="#">Store</a>
                   </li>
+                    </li>
+                    <li class="nav-item active">
+                    <a class="nav-link" href="#">Notifikasi</a>
+                  </li>
                 </ul>
               </div>
             </nav>
