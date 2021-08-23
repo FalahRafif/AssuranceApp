@@ -26,14 +26,15 @@
                             <h1 class="text-center">Login</h1>
                             <!-- ////////////////////////// Login input /////////////////////////-->
                               <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <label for="exampleInputEmail1">Username</label>
+                                  <asp:TextBox ID="txtUser" CssClass="form-control" placeholder="Enter Username" runat="server" ></asp:TextBox>
                               </div>
                               <div class="form-group">
                                 <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1">
+                                  <asp:TextBox ID="txtPass" CssClass="form-control" placeholder="Enter Password" runat="server" TextMode="password"></asp:TextBox>
                               </div>
-                              <button type="submit" class="btn btn-primary">Submit</button>
+                            <asp:Button ID="btnLogin" OnClick="btnLogin_Click" CssClass="btn btn-primary" runat="server" Text="Login" />
+                            <asp:Label ID="LblWarning" CssClass="text-warning" runat="server" Text=""></asp:Label>
                             <!-- ////////////////////////// end Login input /////////////////////////-->
                         </div>
                     </div>
