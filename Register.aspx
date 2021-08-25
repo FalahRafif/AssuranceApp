@@ -22,6 +22,7 @@
                         <div class="card-body">
                             <h1 class="text-center">Register</h1>
                             <hr />
+                            <asp:Button ID="Button1" OnClick="Button1_Click" runat="server" Text="Button" />
                          <!-- ////////////////////////// register input /////////////////////////-->
                             <div class="row">
                                 <div class="col-sm-6">
@@ -115,6 +116,7 @@
                          <!-- ////////////////////////// register input /////////////////////////-->
                             <hr class="mb-5" />
                             <button class="btn btn-primary">Register</button>
+
                         </div>
                     </div>
                 </div>

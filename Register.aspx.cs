@@ -13,5 +13,11 @@ namespace AssuranceApp
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("~/DashboardNasabah.aspx");
+        }
     }
 }
