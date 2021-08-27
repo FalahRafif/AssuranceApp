@@ -24,16 +24,22 @@
 
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
+
                   <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                   <asp:HyperLink ID="Link1" runat="server" CssClass="nav-link" NavigateUrl="~/DashboardNasabah.aspx" Text="Home" />
                   </li>
+
                   <li class="nav-item active">
-                    <a class="nav-link" href="#">Store</a>
+
+                    <asp:HyperLink ID="HyperLink1" runat="server" CssClass="nav-link" NavigateUrl="~/Store.aspx" Text="Store" />
                   </li>
+
                     </li>
                     <li class="nav-item active">
-                    <a class="nav-link" href="#">Notifikasi</a>
+                        
+                    <asp:HyperLink ID="HyperLink2" runat="server" CssClass="nav-link" NavigateUrl="~/Notification.aspx" Text="Notifikasi" />
                   </li>
+
                 </ul>
               </div>
             </nav>
@@ -46,32 +52,29 @@
             <!-- ////////////////////////// content /////////////////////////-->
             <div class="row">
                 <!-- ////////////////////////// card asuransi /////////////////////////-->
-                <div class="col-sm-12">
-                    <div class="card mb-5">
-                        <div class="card-body">
-                            <h3>Asuransi Kesehatan Cepat Sembuh </h3>
-                            <hr />
-                            <h3>Info asuransi</h3>
-                                            <p>Benefit : 200000</p>
-                                            <p>Exp : 2021-10-12</p>
-                                            <p>Max claim : 5</p>
-                                            <button class="btn btn-primary">Beli Asuransi</button>
+                <asp:Repeater ID="showAssurance" runat="server">
+                    <HeaderTemplate></HeaderTemplate>
+                    <ItemTemplate>
+                        <div class="col-sm-12">
+                            <div class="card mb-5">
+                                <div class="card-body">
+                                    <h3><%# Eval("AssuranceName") %></h3>
+                                    <hr />
+                                    <h3>Info asuransi</h3>
+                                    <p>Premi : <%# Eval("Premi") %></p>                
+                                    <p>Coverage : <%# Eval("CoverageMonth") %></p>                
+                                    <p>Benefit : <%# Eval("Benefit") %></p> 
+                                    <p>Max Claim : <%# Eval("MaxClaim") %></p>
+                                    <button class="btn btn-primary">Beli Asuransi</button>                
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-sm-12">
-                    <div class="card mb-5">
-                        <div class="card-body">
-                            <h3>Asuransi Kesehatan Cepat Sembuh </h3>
-                            <hr />
-                            <h3>Info asuransi</h3>
-                                            <p>Benefit : 200000</p>
-                                            <p>Exp : 2021-10-12</p>
-                                            <p>Max claim : 5</p>
-                                            <button class="btn btn-primary">Beli Asuransi</button>
-                        </div>
-                    </div>
-                </div>
+                    </ItemTemplate>
+                    <FooterTemplate></FooterTemplate>
+                    
+                </asp:Repeater>
+               
+                
                 <!-- ////////////////////////// end card asuransi /////////////////////////-->
             </div>
             <!-- ////////////////////////// End content /////////////////////////-->

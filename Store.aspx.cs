@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using AssuranceApp.Classes;
 
 namespace AssuranceApp
 {
@@ -11,7 +13,17 @@ namespace AssuranceApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            showDataAssurance();
+        }
+        private void showDataAssurance()
+        {
+            // get data asuransi
+            DataTable Dt = new DataTable(); 
+            Dt = ClsStore.getAssurance();
 
+            // show data asuransi
+            showAssurance.DataSource = Dt;
+            showAssurance.DataBind();
         }
     }
 }
