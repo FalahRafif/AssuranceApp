@@ -13,6 +13,7 @@ namespace AssuranceApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // session
             if(Session["idAkunNasabah"] != null && Session["userLevel"] != null)
             {
                 //get user level
@@ -29,6 +30,7 @@ namespace AssuranceApp
                         break;
                 }
             }
+            
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)

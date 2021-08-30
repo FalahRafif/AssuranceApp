@@ -24,15 +24,22 @@
 
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
+
                   <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                   <asp:HyperLink ID="Link1" runat="server" CssClass="nav-link" NavigateUrl="~/DashboardNasabah.aspx" Text="Home" />
                   </li>
+
                   <li class="nav-item active">
-                    <a class="nav-link" href="#">Store</a>
+
+                    <asp:HyperLink ID="HyperLink1" runat="server" CssClass="nav-link" NavigateUrl="~/Store.aspx" Text="Store" />
                   </li>
+
+                    </li>
                     <li class="nav-item active">
-                    <a class="nav-link" href="#">Notifikasi</a>
+                        
+                    <asp:HyperLink ID="HyperLink2" runat="server" CssClass="nav-link" NavigateUrl="~/Notification.aspx" Text="Notifikasi" />
                   </li>
+
                 </ul>
               </div>
             </nav>
@@ -41,15 +48,27 @@
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-body">
-                            <h1>checkout</h1>
-                            <hr />
-                            <h4>Jenis Asuransi  </h4>
-                            <hr />
-                            <p>Asuransi Kesehatan Cepat Sembuh </p>
-                            <p>info asuransi :</p>
-                                            <p>Benefit : 200000</p>
-                                            <p>Exp : 2021-10-12</p>
-                                            <p>Max claim : 5</p>
+                            <!-- ////////////////////////// show data asuransi /////////////////////////-->
+                            <asp:Repeater ID="showAssurance"  runat="server">
+                                <HeaderTemplate>
+                                    <h1>checkout</h1>
+                                    <hr />
+                                </HeaderTemplate>
+                                <ItemTemplate>
+                                    <h4>Jenis Asuransi : <%# Eval("AssuranceName") %> </h4>
+                                    <hr />
+                                    <h4>Info asuransi :</h4>
+                                    <p>Premi : <%# Eval("Premi") %></p>                
+                                    <p>Coverage : <%# Eval("CoverageMonth") %> Bulan</p>                
+                                    <p class="mb-5">Benefit : <%# Eval("DetailProduct") %></p> 
+                                </ItemTemplate>
+                                <FooterTemplate></FooterTemplate>
+                            </asp:Repeater>
+
+                             <!-- ////////////////////////// End show data asuransi /////////////////////////-->
+                            
+                            
+                            
                             <h4>Payment</h4>
                              <hr />
                             <div class="row">

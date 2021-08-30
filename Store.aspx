@@ -55,17 +55,17 @@
                 <asp:Repeater ID="showAssurance" runat="server">
                     <HeaderTemplate></HeaderTemplate>
                     <ItemTemplate>
-                        <div class="col-sm-12">
+                        <div class="col-sm-6">
                             <div class="card mb-5">
                                 <div class="card-body">
                                     <h3><%# Eval("AssuranceName") %></h3>
                                     <hr />
                                     <h3>Info asuransi</h3>
                                     <p>Premi : <%# Eval("Premi") %></p>                
-                                    <p>Coverage : <%# Eval("CoverageMonth") %></p>                
-                                    <p>Benefit : <%# Eval("Benefit") %></p> 
-                                    <p>Max Claim : <%# Eval("MaxClaim") %></p>
-                                    <button class="btn btn-primary">Beli Asuransi</button>                
+                                    <p>Coverage : <%# Eval("CoverageMonth") %> Bulan</p>                
+                                    <p>Benefit : <%# Eval("DetailProduct") %></p> 
+
+                                    <a href="Checkout.aspx?idProduct=<%# Eval("IdProductAssurance") %>" class="btn btn-primary">Beli Asssuransi</a>              
                                 </div>
                             </div>
                         </div>

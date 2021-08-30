@@ -98,6 +98,7 @@
     <Compile Include="Checkout.aspx.designer.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Classes\ClsCheckout.cs" />
     <Compile Include="Classes\ClsLogin.cs" />
     <Compile Include="Classes\ClsModul.cs" />
     <Compile Include="Classes\ClsStore.cs" />
