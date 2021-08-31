@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using AssuranceApp.Classes;
 
 namespace AssuranceApp
 {
@@ -32,6 +34,22 @@ namespace AssuranceApp
             {
                 Response.Redirect("~/Login.aspx");
             }
+            showDataPolis();
+        }
+        private void showDataPolis()
+        {
+            //get id nasabah
+            int idNasabah = Convert.ToInt32(Session["idNasabah"]);
+
+            // get data asuransi
+            DataTable Dt = new DataTable();
+            Dt = ClsDashboardNasabah.getPolisByIdNasabah(idNasabah);
+
+            //var DtTable = Dt.Rows[0].ItemArray.Select(x => x.ToString()).ToArray();
+            //int y = 2;
+            // show data asuransi
+            showPolis.DataSource = Dt;
+            showPolis.DataBind();
         }
     }
 }

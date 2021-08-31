@@ -27,11 +27,11 @@
                             <!-- ////////////////////////// Login input /////////////////////////-->
                               <div class="form-group">
                                 <label for="exampleInputEmail1">Username</label>
-                                  <asp:TextBox ID="txtUser" CssClass="form-control" placeholder="Enter Username" runat="server" ></asp:TextBox>
+                                  <asp:TextBox ID="txtUser" CssClass="form-control" placeholder="Enter Username" runat="server" required></asp:TextBox>
                               </div>
                               <div class="form-group">
                                 <label for="exampleInputPassword1">Password</label>
-                                  <asp:TextBox ID="txtPass" CssClass="form-control" placeholder="Enter Password" runat="server" TextMode="password"></asp:TextBox>
+                                  <asp:TextBox ID="txtPass" CssClass="form-control" placeholder="Enter Password" runat="server" TextMode="password" required></asp:TextBox>
                               </div>
                             <asp:Button ID="btnLogin" OnClick="btnLogin_Click" CssClass="btn btn-primary" runat="server" Text="Login" />
                             <asp:Label ID="LblWarning" CssClass="text-warning" runat="server" Text=""></asp:Label>

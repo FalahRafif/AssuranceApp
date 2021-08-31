@@ -66,28 +66,36 @@
                             </asp:Repeater>
 
                              <!-- ////////////////////////// End show data asuransi /////////////////////////-->
-                            
-                            
-                            
-                            <h4>Payment</h4>
+                            <!-- ////////////////////////// Data payment /////////////////////////-->
+                            <h4>Payment :</h4>
                              <hr />
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Pilih Payment</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                                        <asp:TextBox ID="txtIdProduct" Style="display: none" runat="server"></asp:TextBox>
+
+                                        <asp:DropDownList ID="ddwnPayment" CssClass="form-control" runat="server">
+                                            <asp:ListItem Text="BCA" />
+                                            <asp:ListItem Text="Mandiri" />
+                                            <asp:ListItem Text="BRI (BRIVA)" />
+                                            <asp:ListItem Text="BNI" />
+                                            <asp:ListItem Text="Mandiri Syariah" />
+                                        </asp:DropDownList>
                                       </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Card Number</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <asp:TextBox ID="txtCard" CssClass="form-control" runat="server" required></asp:TextBox>
                                       </div>
                                 </div>
                                
                             </div>
-                             <button class="btn btn-primary">Beli</button>
-                        
+                            <asp:Button ID="btnBeli" OnClick="btnBeli_Click" CssClass="btn btn-primary" runat="server" Text="Beli" />
+                            <a href="Store.aspx" class="btn btn-secondary">Kembali</a>
+                        <!-- ////////////////////////// EndData Payment /////////////////////////-->
                     </div>
                 </div>
             </div>

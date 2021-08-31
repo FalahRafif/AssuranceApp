@@ -60,37 +60,30 @@
                             <hr />
                             <!-- ////////////////////////// card asuransi /////////////////////////-->
                             <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="card border-primary mb-5">
-                                        <div class="card-header">Asuransi A</div>
-                                        <div class="card-body">
-                                            <h3>Info asuransi</h3>
-                                            <p>Policy Number 2344-2342-2342</p>
-                                            <p>Status : inforce</p>
-                                            <p>Benefit : 200000</p>
-                                            <p>Exp : 2021-10-12</p>
-                                            <p>Max claim : 5</p>
-                                            <p>Total Claim : 5</p>
-                                            <button class="btn btn-primary">Claim Asuransi</button>
-                                        </div>
+                                <asp:Repeater ID="showPolis" runat="server">
+                                    <HeaderTemplate></HeaderTemplate>
+                                    <ItemTemplate>
+                                        <div class="col-sm-12">
+                                            <div class="card border-primary mb-5">
+                                                <div class="card-header"><%# Eval("AssuranceName") %></div>
+                                                <div class="card-body">
+                                                    <h3>Info asuransi</h3>
+                                                    <p>Policy Number : <%# Eval("PolicyNumber") %></p>
+                                                    <p>Status : <%# Eval("StatusPolis") %></p>
+                                                    <p>Benefit : <%# Eval("DetailProduct") %></p>
+                                                    <p>Start : <%# Eval("DateStart") %></p>
+                                                    <p>Exp : <%# Eval("DateExp") %></p>
+                                                    <p>Max claim : <%# Eval("MaxClaim") %></p>
+                                                    <p>Total Claim : ??</p>
+                                                    <button class="btn btn-primary">Claim Asuransi</button>
+                                                </div>
                                        
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="card border-primary mb-5">
-                                        <div class="card-header">Asuransi A</div>
-                                        <div class="card-body">
-                                            <h3>Info asuransi</h3>
-                                            <p>Policy Number 2344-2342-2342</p>
-                                            <p>Status : inforce</p>
-                                            <p>Benefit : 200000</p>
-                                            <p>Exp : 2021-10-12</p>
-                                            <p>Max claim : 5</p>
-                                            <p>Total Claim : 5</p>
-                                            <button class="btn btn-primary">Claim Asuransi</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
+                                    </ItemTemplate>
+                                    <FooterTemplate></FooterTemplate>
+                                </asp:Repeater>
+                                
                             </div>
                             <!-- ////////////////////////// end card asuransi /////////////////////////-->
                         </div>
