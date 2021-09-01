@@ -46,8 +46,8 @@ namespace AssuranceApp
                 var DtTable = DtLogin.Rows[0].ItemArray.Select(x => x.ToString()).ToArray();
                 //add session
                 Session["idAkunNasabah"] = DtTable[0];
-                Session["idNasabah"] = DtTable[0];
-                Session["userLevel"] = DtTable[0];
+                Session["idNasabah"] = DtTable[1];
+                Session["userLevel"] = DtTable[4];
 
                 //redirect dashboard nasabah
                 Response.Redirect("~/DashboardNasabah.aspx");
