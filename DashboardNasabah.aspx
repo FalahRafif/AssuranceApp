@@ -67,7 +67,7 @@
                                 <asp:Repeater ID="showPolis" runat="server">
                                     <HeaderTemplate></HeaderTemplate>
                                     <ItemTemplate>
-                                        <div class="col-sm-12">
+                                        <div class="col-sm-6">
                                             <div class="card border-primary mb-5">
                                                 <div class="card-header"><%# Eval("AssuranceName") %></div>
                                                 <div class="card-body">
@@ -75,11 +75,11 @@
                                                     <p>Policy Number : <%# Eval("PolicyNumber") %></p>
                                                     <p>Status : <%# Eval("StatusPolis") %></p>
                                                     <p>Benefit : <%# Eval("DetailProduct") %></p>
-                                                    <p>Start : <%# Eval("DateStart") %></p>
-                                                    <p>Exp : <%# Eval("DateExp") %></p>
+                                                    <p>Date Start : <%# ((DateTime)Eval("DateStart")).ToString("yyyy/MM//dd") %></p>
+                                                    <p>Date Expired : <%# ((DateTime)Eval("dateExp")).ToString("yyyy/MM//dd") %></p>
                                                     <p>Max claim : <%# Eval("MaxClaim") %></p>
                                                     <p>Total Claim : ??</p>
-                                                    <button class="btn btn-primary">Claim Asuransi</button>
+                                                    <a href="claim.aspx?idPolis=<%# Eval("idPolis") %>" class="btn btn-primary">Claim Assuransi</a>
                                                 </div>
                                        
                                             </div>

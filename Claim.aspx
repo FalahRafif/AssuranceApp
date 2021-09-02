@@ -59,21 +59,26 @@
                                 <div class="col-sm-6">
                                     <h5 class="text-center">Data Claim</h5>
                                     <hr />
+                                    <asp:TextBox ID="txtIdPolis" Style="display: none" runat="server"></asp:TextBox>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Nama Rumah Sakit</label>
-                                        <asp:TextBox ID="txtUser" CssClass="form-control" placeholder="Enter Username" runat="server" required></asp:TextBox>
+                                        <asp:TextBox ID="txtHpName" CssClass="form-control"  runat="server" required></asp:TextBox>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Alamat Rumah Sakit</label>
-                                        <asp:TextBox ID="TextBox1" CssClass="form-control" placeholder="Enter Username" runat="server" required></asp:TextBox>
+                                        <asp:TextBox ID="txtHpAddress" CssClass="form-control"  runat="server" required></asp:TextBox>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">No Telp Rumah Sakit</label>
-                                        <asp:TextBox ID="TextBox2" CssClass="form-control" placeholder="Enter Username" runat="server" required></asp:TextBox>
+                                        <asp:TextBox ID="txtHpNumber" CssClass="form-control"  runat="server" required></asp:TextBox>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">No aPasien</label>
-                                        <asp:TextBox ID="TextBox3" CssClass="form-control" placeholder="Enter Username" runat="server" required></asp:TextBox>
+                                        <label for="exampleInputEmail1">No Pasien</label>
+                                        <asp:TextBox ID="txtNoPasien" CssClass="form-control"  runat="server" required></asp:TextBox>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Banyak Claim</label>
+                                        <asp:TextBox ID="txtBanyakClaim" CssClass="form-control"  runat="server" required></asp:TextBox>
                                     </div>
                                 </div>
                                 <!-- ////////////////////////// End form /////////////////////////-->
@@ -81,11 +86,24 @@
                                 <div class="col-sm-6">
                                     <h5 class="text-center">Info Asuransi</h5>
                                     <hr />
+                                    <asp:Repeater ID="showAssurance" runat="server">
+                                        <HeaderTemplate></HeaderTemplate>
+                                        <ItemTemplate>
+                                            <p>Nama Assuransi : <%# Eval("AssuranceName") %></p>
+                                            <p>Policy Number : <%# Eval("PolicyNumber") %></p>
+                                            <p>Status : <%# Eval("StatusPolis") %></p>
+                                            <p>Benefit : <%# Eval("DetailProduct")  %></p>
+                                            <p>Date Start : <%# ((DateTime)Eval("DateStart")).ToString("yyyy/MM//dd")%></p>
+                                            <p>Date Expired : <%# ((DateTime)Eval("DateExp")).ToString("yyyy/MM//dd") %></p>
+                                            <p>Max claim : <%# Eval("MaxClaim") %></p>
+                                        </ItemTemplate>
+                                        <FooterTemplate></FooterTemplate>
+                                    </asp:Repeater>
                                     
                                 </div>
                                 <!-- ////////////////////////// End navbar /////////////////////////-->
                             </div>
-                            <button class="btn btn-primary">Claim</button>
+                            <asp:Button ID="btnSumbit" CssClass="btn btn-primary" OnClick="btnSubmit_Click" runat="server" Text="Claim" />
                             <a href="dashboardnasabah.aspx" class="btn btn-secondary">Kembali</a>
                         </div>
                     </div>

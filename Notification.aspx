@@ -56,8 +56,7 @@
                             <hr />
                             
                             <asp:Repeater ID="showNotif" runat="server">
-                                <HeaderTemplate></HeaderTemplate>
-                                <ItemTemplate>
+                                <HeaderTemplate>
                                     <table class="table_id" class="display">
                                         <thead>
                                             <tr>
@@ -67,15 +66,20 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                </HeaderTemplate>
+                                <ItemTemplate>
+                                    
                                             <tr>
                                                 <td><%# Eval("NotifDate") %></td>
                                                 <td><%# Eval("NotifStatus") %></td>
                                                 <td><%# Eval("Msg") %></td>
                                             </tr>
-                                            </tbody>
-                                    </table>
+                                           
                                 </ItemTemplate>
-                                <FooterTemplate></FooterTemplate>
+                                <FooterTemplate>
+                                     </tbody>
+                                    </table>
+                                </FooterTemplate>
                             </asp:Repeater>
                             
                                     

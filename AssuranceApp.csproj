@@ -108,6 +108,7 @@
       <DependentUpon>Claim.aspx</DependentUpon>
     </Compile>
     <Compile Include="Classes\ClsCheckout.cs" />
+    <Compile Include="Classes\ClsClaim.cs" />
     <Compile Include="Classes\ClsDashboardNasabah.cs" />
     <Compile Include="Classes\ClsLogin.cs" />
     <Compile Include="Classes\ClsModul.cs" />
