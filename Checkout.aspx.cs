@@ -35,6 +35,7 @@ namespace AssuranceApp
                 Response.Redirect("~/Login.aspx");
             }
 
+            cek();
             GetData();
             
         }
@@ -53,8 +54,25 @@ namespace AssuranceApp
             showAssurance.DataSource = Dt;
             showAssurance.DataBind();
         }
+        public void cek()
+        {
+            ///////////////// cek jika product sedang aktif / sudah di beli
+            string status = "Inforce";
+            string idProduct = Request.QueryString["idProduct"];
+            DataTable Dt = new DataTable();
+            Dt = ClsCheckout.getPolisByIdAndStatus(Convert.ToInt32(idProduct), status);
+            if (Dt.Rows.Count != 0)
+            {
+                labelWarning.Text = "Anda Sudah Membeli Product Ini";
+                btnBeli.CssClass = "btn btn-secondary";
+                btnBeli.Enabled = false;
+                ddwnPayment.Enabled = false;
+                txtCard.Enabled = false;
+            }
+        }
         protected void btnBeli_Click(object sender, EventArgs e)
         {
+            /////////////////// Insert Polis
             // gather data 
             int idNasabah = Convert.ToInt32(Session["idNasabah"]) ; 
             string cardNumber = txtCard.Text;
@@ -67,6 +85,7 @@ namespace AssuranceApp
 
             // create Date polis
             var time = DateTime.Today;
+            var notifTime = DateTime.Today;
             string dateStart = time.ToString("yyyy-MM-dd");
             string dateExp = time.AddDays(30).ToString("yyyy-MM-dd");
             
@@ -76,7 +95,24 @@ namespace AssuranceApp
             /// insert data
             ClsCheckout.insertNewPolis(policyNumber, idProduct, idNasabah, dateStart, dateExp, statusPolis, payment, cardNumber);
 
-            Response.Redirect("~/Login.aspx");
+            /////////////////////////// Insert Notification
+            // get data polis
+            DataTable Dt = new DataTable();
+            Dt = ClsCheckout.getPolisByPolicyNumber(policyNumber);
+
+            // convert data table ke array
+            var DtPolis = Dt.Rows[0].ItemArray.Select(x => x.ToString()).ToArray();
+
+            // gather data
+            int idPolis = Convert.ToInt32(DtPolis[0]);
+            string notifStatus = "Buy";
+            string msg = $"Nasabah Telah Membeli Assuransi : {DtPolis[10]}";
+            string notifDate = notifTime.ToString("yyyy-MM-dd");
+
+            //insert data
+            ClsCheckout.InsertNotification(idPolis, idNasabah, notifStatus, msg, notifDate);
+
+            Response.Redirect("~/DashboardNasabah.aspx");
         }
     }
 }

@@ -39,7 +39,10 @@
                         
                     <asp:HyperLink ID="HyperLink2" runat="server" CssClass="nav-link" NavigateUrl="~/Notification.aspx" Text="Notifikasi" />
                   </li>
-
+                    <li class="nav-item active">
+                        
+                    <asp:HyperLink ID="HyperLink3" runat="server" CssClass="nav-link" NavigateUrl="~/Logout.aspx" Text="Logout" />
+                  </li>
                 </ul>
               </div>
             </nav>

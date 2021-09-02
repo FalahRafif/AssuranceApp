@@ -39,6 +39,10 @@
                         
                     <asp:HyperLink ID="HyperLink2" runat="server" CssClass="nav-link" NavigateUrl="~/Notification.aspx" Text="Notifikasi" />
                   </li>
+                    <li class="nav-item active">
+                        
+                    <asp:HyperLink ID="HyperLink3" runat="server" CssClass="nav-link" NavigateUrl="~/Logout.aspx" Text="Logout" />
+                  </li>
                 </ul>
               </div>
             </nav>
@@ -50,24 +54,32 @@
                         <div class="card-body">
                             <h1>Notifikasi</h1>
                             <hr />
-                            <table class="table_id" class="display">
-                                <thead>
-                                    <tr>
-                                        <th>Column 1</th>
-                                        <th>Column 2</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Row 1 Data 1</td>
-                                        <td>Row 1 Data 2</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Row 2 Data 1</td>
-                                        <td>Row 2 Data 2</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            
+                            <asp:Repeater ID="showNotif" runat="server">
+                                <HeaderTemplate></HeaderTemplate>
+                                <ItemTemplate>
+                                    <table class="table_id" class="display">
+                                        <thead>
+                                            <tr>
+                                                <th>Tanggal</th>
+                                                <th>Status</th>
+                                                <th>Pesan</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><%# Eval("NotifDate") %></td>
+                                                <td><%# Eval("NotifStatus") %></td>
+                                                <td><%# Eval("Msg") %></td>
+                                            </tr>
+                                            </tbody>
+                                    </table>
+                                </ItemTemplate>
+                                <FooterTemplate></FooterTemplate>
+                            </asp:Repeater>
+                            
+                                    
+                                
                         </div>
                     </div>
                 </div>

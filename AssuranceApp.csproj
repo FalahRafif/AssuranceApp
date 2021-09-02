@@ -83,8 +83,10 @@
     <Content Include="asset\js\jquery.dataTables.min.js" />
     <Content Include="asset\js\popper.min.js" />
     <Content Include="Checkout.aspx" />
+    <Content Include="Claim.aspx" />
     <Content Include="DashboardNasabah.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Logout.aspx" />
     <Content Include="Notification.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Store.aspx" />
@@ -98,10 +100,18 @@
     <Compile Include="Checkout.aspx.designer.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Claim.aspx.cs">
+      <DependentUpon>Claim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Claim.aspx.designer.cs">
+      <DependentUpon>Claim.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Classes\ClsCheckout.cs" />
     <Compile Include="Classes\ClsDashboardNasabah.cs" />
     <Compile Include="Classes\ClsLogin.cs" />
     <Compile Include="Classes\ClsModul.cs" />
+    <Compile Include="Classes\ClsNotification.cs" />
     <Compile Include="Classes\ClsStore.cs" />
     <Compile Include="DashboardNasabah.aspx.cs">
       <DependentUpon>DashboardNasabah.aspx</DependentUpon>
@@ -116,6 +126,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Notification.aspx.cs">
       <DependentUpon>Notification.aspx</DependentUpon>

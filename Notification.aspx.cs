@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using AssuranceApp.Classes;
 
 namespace AssuranceApp
 {
@@ -32,6 +34,18 @@ namespace AssuranceApp
             {
                 Response.Redirect("~/Login.aspx");
             }
+            GetData();
+        }
+        public void GetData()
+        {
+            // get data asuransi
+            int idNasabah = Convert.ToInt32(Session["idNasabah"]);
+            DataTable Dt = new DataTable();
+            Dt = ClsNotification.getNotificationByIdNasabah(idNasabah);
+
+            // show data asuransi
+            showNotif.DataSource = Dt;
+            showNotif.DataBind();
         }
     }
 }

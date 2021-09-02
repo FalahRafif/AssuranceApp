@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DashboardNasabah.aspx.cs" Inherits="AssuranceApp.DashboardNasabah" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Claim.aspx.cs" Inherits="AssuranceApp.Claim" %>
 
 <!DOCTYPE html>
 
@@ -10,11 +10,11 @@
     <link href="asset/bs/css/bootstrap.min.css" rel="stylesheet" />
     <link href="asset/css/jquery.dataTables.min.css" rel="stylesheet" />
     <!-- ////////////////////////// End Css /////////////////////////-->
-    <title>Dashboard</title>
+    <title>Claim</title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="container"> 
+        <div class="container">
             <!-- ////////////////////////// Navbar /////////////////////////-->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <a class="navbar-brand font-weight-bold" href="#">Aplikasi Asuransi</a>
@@ -47,54 +47,52 @@
               </div>
             </nav>
             <!-- ////////////////////////// End navbar /////////////////////////-->
-            <!-- ////////////////////////// Jumbotron /////////////////////////-->
-            <div class="jumbotron">
-              <h1 class="display-4">Selamat Datang Nasabah</h1>
-              <p class="lead">selalu waspada pada setiap situasi yang ada</p>
-              <hr class="my-4">
-              <p>Tapi tidak perlu khawatir kami selalu ada untuk kamu <3</p>
-            </div>
-            <!-- ////////////////////////// End Jumbotron /////////////////////////-->
-            <div class="row">   
+            <!-- ////////////////////////// Card /////////////////////////-->
+            <div class="row mt-5">
                 <div class="col-sm-12">
-                    <!-- ////////////////////////// content /////////////////////////-->
-                    <div class="card  ">
+                    <div class="card">
                         <div class="card-body">
-                            <h1>Asuransi Aktif</h1>
+                            <h3>Claim Asuransi</h3>
                             <hr />
-                            <!-- ////////////////////////// card asuransi /////////////////////////-->
                             <div class="row">
-                                <asp:Repeater ID="showPolis" runat="server">
-                                    <HeaderTemplate></HeaderTemplate>
-                                    <ItemTemplate>
-                                        <div class="col-sm-12">
-                                            <div class="card border-primary mb-5">
-                                                <div class="card-header"><%# Eval("AssuranceName") %></div>
-                                                <div class="card-body">
-                                                    <h3>Info asuransi</h3>
-                                                    <p>Policy Number : <%# Eval("PolicyNumber") %></p>
-                                                    <p>Status : <%# Eval("StatusPolis") %></p>
-                                                    <p>Benefit : <%# Eval("DetailProduct") %></p>
-                                                    <p>Start : <%# Eval("DateStart") %></p>
-                                                    <p>Exp : <%# Eval("DateExp") %></p>
-                                                    <p>Max claim : <%# Eval("MaxClaim") %></p>
-                                                    <p>Total Claim : ??</p>
-                                                    <button class="btn btn-primary">Claim Asuransi</button>
-                                                </div>
-                                       
-                                            </div>
-                                        </div>
-                                    </ItemTemplate>
-                                    <FooterTemplate></FooterTemplate>
-                                </asp:Repeater>
-                                
+                                <!-- ////////////////////////// form /////////////////////////-->
+                                <div class="col-sm-6">
+                                    <h5 class="text-center">Data Claim</h5>
+                                    <hr />
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Nama Rumah Sakit</label>
+                                        <asp:TextBox ID="txtUser" CssClass="form-control" placeholder="Enter Username" runat="server" required></asp:TextBox>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Alamat Rumah Sakit</label>
+                                        <asp:TextBox ID="TextBox1" CssClass="form-control" placeholder="Enter Username" runat="server" required></asp:TextBox>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">No Telp Rumah Sakit</label>
+                                        <asp:TextBox ID="TextBox2" CssClass="form-control" placeholder="Enter Username" runat="server" required></asp:TextBox>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">No aPasien</label>
+                                        <asp:TextBox ID="TextBox3" CssClass="form-control" placeholder="Enter Username" runat="server" required></asp:TextBox>
+                                    </div>
+                                </div>
+                                <!-- ////////////////////////// End form /////////////////////////-->
+                                <!-- ////////////////////////// info asuransi /////////////////////////-->
+                                <div class="col-sm-6">
+                                    <h5 class="text-center">Info Asuransi</h5>
+                                    <hr />
+                                    
+                                </div>
+                                <!-- ////////////////////////// End navbar /////////////////////////-->
                             </div>
-                            <!-- ////////////////////////// end card asuransi /////////////////////////-->
+                            <button class="btn btn-primary">Claim</button>
+                            <a href="dashboardnasabah.aspx" class="btn btn-secondary">Kembali</a>
                         </div>
                     </div>
-                    <!-- ////////////////////////// end content /////////////////////////-->
                 </div>
             </div>
+            <!-- ////////////////////////// End Card /////////////////////////-->
+            
         </div>
     </form>
     <!-- ////////////////////////// JS /////////////////////////-->

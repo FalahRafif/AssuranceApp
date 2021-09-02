@@ -39,7 +39,10 @@
                         
                     <asp:HyperLink ID="HyperLink2" runat="server" CssClass="nav-link" NavigateUrl="~/Notification.aspx" Text="Notifikasi" />
                   </li>
-
+                    <li class="nav-item active">
+                        
+                    <asp:HyperLink ID="HyperLink3" runat="server" CssClass="nav-link" NavigateUrl="~/Logout.aspx" Text="Logout" />
+                  </li>
                 </ul>
               </div>
             </nav>
@@ -49,6 +52,7 @@
                     <div class="card">
                         <div class="card-body">
                             <!-- ////////////////////////// show data asuransi /////////////////////////-->
+                            
                             <asp:Repeater ID="showAssurance"  runat="server">
                                 <HeaderTemplate>
                                     <h1>checkout</h1>
@@ -95,6 +99,7 @@
                             </div>
                             <asp:Button ID="btnBeli" OnClick="btnBeli_Click" CssClass="btn btn-primary" runat="server" Text="Beli" />
                             <a href="Store.aspx" class="btn btn-secondary">Kembali</a>
+                            <asp:Label ID="labelWarning" CssClass="text-danger" runat="server" Text=""></asp:Label>
                         <!-- ////////////////////////// EndData Payment /////////////////////////-->
                     </div>
                 </div>
