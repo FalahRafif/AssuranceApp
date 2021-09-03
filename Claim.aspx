@@ -105,6 +105,7 @@
                             </div>
                             <asp:Button ID="btnSumbit" CssClass="btn btn-primary" OnClick="btnSubmit_Click" runat="server" Text="Claim" />
                             <a href="dashboardnasabah.aspx" class="btn btn-secondary">Kembali</a>
+                            <asp:Label ID="lblWarning" runat="server" CssClass="text-danger" Text=""></asp:Label>
                         </div>
                     </div>
                 </div>

@@ -38,6 +38,10 @@ namespace AssuranceApp
             txtIdPolis.Text = Convert.ToString(DtTable[0]);
             showAssurance.DataSource = Dt;
             showAssurance.DataBind();
+
+            //cek error
+            if (Session["error"] != null)
+                lblWarning.Text = Convert.ToString(Session["error"]);
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -47,8 +51,27 @@ namespace AssuranceApp
             string HpName = txtHpName.Text;
             string HpAddress = txtHpAddress.Text;
             int patientNumber = Convert.ToInt32(txtNoPasien.Text);
-            int HpPhoneNumber = Convert.ToInt32(txtHpNumber.Text);
+            string HpPhoneNumber = txtHpNumber.Text;
 
+            // cek banyak claim <= benefit
+            DataTable Dt = new DataTable();
+            Dt = ClsClaim.getPolisByIdPolis(Convert.ToInt32(idPolis));
+            var DtTable = Dt.Rows[0].ItemArray.Select(x => x.ToString()).ToArray();
+
+            if(totalClaim >= Convert.ToInt32(DtTable[13]))
+            {
+                Session["error"] = "Banyak Claim telah melebihi Benefit";
+                Response.Redirect($"~/Claim.aspx?idPolis={idPolis}");
+            }
+
+            // get date
+            var time = DateTime.Today;
+            string dateClaim = time.ToString("yyyy-MM-dd");
+
+            //insert data
+            ClsClaim.InsertClaim(idPolis, totalClaim, dateClaim, HpName, HpAddress, patientNumber, HpPhoneNumber);
+
+            Response.Redirect("~/DashboardNasabah.aspx");
         }
     }
 }

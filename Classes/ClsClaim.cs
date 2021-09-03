@@ -38,5 +38,29 @@ namespace AssuranceApp.Classes
             }
 
         }
+        public static void InsertClaim(int idPolis, int totalClaim,string dateClaim, string hpName, string hpAddress, int patientNumber, string hpPhoneNumber)
+        {
+            try
+            {
+                //setup koneksi
+                SqlConnection SqlConn = new SqlConnection(ClsModul.Conn.ToString());
+                SqlCommand cmd = new SqlCommand();
+
+
+                //query
+                SqlConn.Open();
+                cmd.Connection = SqlConn;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = $"insert into TbClaimAssurance values('{idPolis}','{totalClaim}','{dateClaim}','{hpName}','{hpAddress}', '{patientNumber}','{hpPhoneNumber}')";
+                cmd.ExecuteNonQuery();
+                SqlConn.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }
