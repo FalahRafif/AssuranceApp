@@ -113,6 +113,7 @@
     <Compile Include="Classes\ClsLogin.cs" />
     <Compile Include="Classes\ClsModul.cs" />
     <Compile Include="Classes\ClsNotification.cs" />
+    <Compile Include="Classes\ClsRegister.cs" />
     <Compile Include="Classes\ClsStore.cs" />
     <Compile Include="DashboardNasabah.aspx.cs">
       <DependentUpon>DashboardNasabah.aspx</DependentUpon>

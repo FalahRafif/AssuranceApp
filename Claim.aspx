@@ -70,15 +70,15 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">No Telp Rumah Sakit</label>
-                                        <asp:TextBox ID="txtHpNumber" CssClass="form-control"  runat="server" required></asp:TextBox>
+                                        <asp:TextBox ID="txtHpNumber" CssClass="form-control"  runat="server" TextMode="Number" required></asp:TextBox>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">No Pasien</label>
-                                        <asp:TextBox ID="txtNoPasien" CssClass="form-control"  runat="server" required></asp:TextBox>
+                                        <asp:TextBox ID="txtNoPasien" CssClass="form-control"  runat="server" TextMode="Number" required></asp:TextBox>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Banyak Claim</label>
-                                        <asp:TextBox ID="txtBanyakClaim" CssClass="form-control"  runat="server" required></asp:TextBox>
+                                        <asp:TextBox ID="txtBanyakClaim" CssClass="form-control"  runat="server" TextMode="Number" required></asp:TextBox>
                                     </div>
                                 </div>
                                 <!-- ////////////////////////// End form /////////////////////////-->

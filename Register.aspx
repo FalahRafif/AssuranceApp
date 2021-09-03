@@ -29,45 +29,51 @@
                                     <hr />
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">NIK</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                         <asp:TextBox ID="txtNIK" CssClass="form-control" runat="server" TextMode="Number"  required></asp:TextBox>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Nama Lengkap</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <asp:TextBox ID="txtNamaLengkap" CssClass="form-control"  runat="server"  required></asp:TextBox>
                                     </div>
                                     <div class="row">   
                                         <div class="col-sm-6">
                                            <div class="form-group">
                                                 <label for="exampleInputEmail1">Tanggal Lahir</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                <asp:TextBox ID="txtTglLahir" CssClass="form-control"  runat="server" TextMode="Date"  required></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Tempat Lahir</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                <asp:TextBox ID="txtTmptLahir" CssClass="form-control"  runat="server"  required></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Jenis Kelamin</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <asp:DropDownList ID="ddwnJK" runat="server" CssClass="form-control">
+                                            <asp:ListItem Text="Laki-Laki" />
+                                            <asp:ListItem Text="Perempuan" />
+                                        </asp:DropDownList>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Status Pernikahan</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <asp:DropDownList ID="ddwnStatusPernikahan" runat="server" CssClass="form-control">
+                                            <asp:ListItem Text="Single" />
+                                            <asp:ListItem Text="Married" />
+                                        </asp:DropDownList>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Nomor Telp</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                <asp:TextBox ID="txtNoTelp" CssClass="form-control"  runat="server" TextMode="Number"  required></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Nomor Telp Rumah</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                <asp:TextBox ID="txtNoTelpRumah" CssClass="form-control"  runat="server" TextMode="Number"  required></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
@@ -75,25 +81,25 @@
                                     
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Alamat</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <asp:TextBox ID="txtAlamat" CssClass="form-control"  runat="server"  required></asp:TextBox>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Kelurahan</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                <asp:TextBox ID="txtKelurahan" CssClass="form-control"  runat="server"  required></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">kecamatan</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                <asp:TextBox ID="txtKecamatan" CssClass="form-control"  runat="server"  required></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Kota</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                <asp:TextBox ID="txtKota" CssClass="form-control"  runat="server"  required></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
@@ -104,18 +110,19 @@
                                     <hr />
                                      <div class="form-group">
                                         <label for="exampleInputEmail1">Username</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                         <asp:TextBox ID="txtUsername" CssClass="form-control"  runat="server"  required></asp:TextBox>
                                     </div>
                                      <div class="form-group">
                                         <label for="exampleInputEmail1">Password</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                         <asp:TextBox ID="txtPassword" CssClass="form-control" TextMode="Password"  runat="server"  required></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
                          <!-- ////////////////////////// register input /////////////////////////-->
                             <hr class="mb-5" />
-                            <button class="btn btn-primary">Register</button>
-
+                            <asp:Button ID="btnSumbit" OnClick="btnSumbit_Click" CssClass="btn btn-primary" runat="server" Text="Sumbit" />
+                            <asp:HyperLink ID="HyperLink3" runat="server" CssClass="btn btn-secondary" NavigateUrl="~/login.aspx" Text="Kembali" />
+                            <asp:Label ID="lblWarning" CssClass="text-danger" runat="server" Text=""></asp:Label>
                         </div>
                     </div>
                 </div>

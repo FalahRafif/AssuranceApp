@@ -92,7 +92,7 @@
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Card Number</label>
-                                        <asp:TextBox ID="txtCard" CssClass="form-control" runat="server" required></asp:TextBox>
+                                        <asp:TextBox ID="txtCard" CssClass="form-control" runat="server" TextMode="Number" required></asp:TextBox>
                                       </div>
                                 </div>
                                
