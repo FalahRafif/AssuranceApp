@@ -34,6 +34,7 @@
                                   <asp:TextBox ID="txtPass" CssClass="form-control" placeholder="Enter Password" runat="server" TextMode="password" required></asp:TextBox>
                               </div>
                             <asp:Button ID="btnLogin" OnClick="btnLogin_Click" CssClass="btn btn-primary" runat="server" Text="Login" />
+                            <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-success" NavigateUrl="~/Register.aspx" Text="Register" />
                             <asp:Label ID="LblWarning" CssClass="text-warning" runat="server" Text=""></asp:Label>
                             <!-- ////////////////////////// end Login input /////////////////////////-->
                         </div>

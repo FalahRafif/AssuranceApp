@@ -47,8 +47,9 @@ namespace AssuranceApp
             ///////////////// cek jika product sedang aktif / sudah di beli
             string status = "Inforce";
             string idProduct = Request.QueryString["idProduct"];
+            int idNasabah = Convert.ToInt32(Session["idNasabah"]);
             DataTable Dt = new DataTable();
-            Dt = ClsCheckout.getPolisByIdAndStatus(Convert.ToInt32(idProduct), status);
+            Dt = ClsCheckout.getPolisByIdStatusIdNasabah(Convert.ToInt32(idProduct), status, idNasabah);
             if (Dt.Rows.Count != 0)
             {
                 labelWarning.Text = "Anda Sudah Membeli Product Ini";
@@ -100,6 +101,7 @@ namespace AssuranceApp
             //insert data
             ClsCheckout.InsertNotification(idPolis, idNasabah, notifStatus, msg, notifDate);
 
+            Session["info"] = $"Nasabah Berhasil Membeli Assuransi {DtPolis[10]}";
             Response.Redirect("~/DashboardNasabah.aspx");
         }
     }

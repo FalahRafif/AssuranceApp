@@ -41,10 +41,16 @@ namespace AssuranceApp
 
             //cek error
             if (Session["error"] != null)
+            {
                 lblWarning.Text = Convert.ToString(Session["error"]);
+                Session["error"] = null;
+            }
+                
+                
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            ////////////////////// insert claim
             //gather data
             int idPolis = Convert.ToInt32(txtIdPolis.Text);
             int totalClaim = Convert.ToInt32(txtBanyakClaim.Text);
@@ -52,6 +58,11 @@ namespace AssuranceApp
             string HpAddress = txtHpAddress.Text;
             int patientNumber = Convert.ToInt32(txtNoPasien.Text);
             string HpPhoneNumber = txtHpNumber.Text;
+            int idNasabah = Convert.ToInt32(Session["idNasabah"]);
+
+            // get date
+            var time = DateTime.Today;
+            string dateClaim = time.ToString("yyyy-MM-dd");
 
             // cek banyak claim <= benefit
             DataTable Dt = new DataTable();
@@ -64,12 +75,42 @@ namespace AssuranceApp
                 Response.Redirect($"~/Claim.aspx?idPolis={idPolis}");
             }
 
-            // get date
-            var time = DateTime.Today;
-            string dateClaim = time.ToString("yyyy-MM-dd");
+            // cek sudah brp banyak nasabah claim
+            DataTable DtCekClaim = new DataTable();
+            DtCekClaim = ClsClaim.getClaimByIdPolis(Convert.ToInt32(idPolis));
+
+            if (DtCekClaim.Rows.Count >= Convert.ToInt32(DtTable[14]))
+            {
+                Session["error"] = "Claim Sudah mencapai Batas";
+                Response.Redirect($"~/Claim.aspx?idPolis={idPolis}");
+            }
+
+            // cek apakah nasabah sudah claim hari ini ?
+            DataTable DtCekClaimDate = new DataTable();
+            DtCekClaimDate = ClsClaim.getClaimByDate(dateClaim);
+
+            if (DtCekClaim.Rows.Count != 0)
+            {
+                Session["error"] = "Kamu Sudah Melakukan Claim Hari Ini";
+                Response.Redirect($"~/Claim.aspx?idPolis={idPolis}");
+            }
+
+            
 
             //insert data
             ClsClaim.InsertClaim(idPolis, totalClaim, dateClaim, HpName, HpAddress, patientNumber, HpPhoneNumber);
+
+            ////////////////////// insert notification
+            // gather data
+            
+            //string notifStatus = "Claim";
+            //string msg = $"Nasabah telah Mengclaim {DtTable[10]}, Sebesar Rp. {totalClaim}";
+            //string notifDate = dateClaim;
+
+            ////insert data 
+            //ClsCheckout.InsertNotification(idPolis, idNasabah, notifStatus, msg, notifDate);
+
+            Session["info"] = $"Nasabah Berhasil Claim Assuransi {DtTable[10]}, Sebesar Rp. {totalClaim}";
 
             Response.Redirect("~/DashboardNasabah.aspx");
         }

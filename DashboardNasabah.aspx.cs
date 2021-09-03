@@ -45,8 +45,11 @@ namespace AssuranceApp
             DataTable Dt = new DataTable();
             Dt = ClsDashboardNasabah.getPolisByIdNasabah(idNasabah);
 
-            //var DtTable = Dt.Rows[0].ItemArray.Select(x => x.ToString()).ToArray();
-            //int y = 2;
+            if(Session["info"] != null)
+            {
+                lblInfo.Text = Convert.ToString(Session["info"]);
+                Session["info"] = null;
+            }
             // show data asuransi
             showPolis.DataSource = Dt;
             showPolis.DataBind();

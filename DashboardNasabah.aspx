@@ -53,6 +53,7 @@
               <p class="lead">selalu waspada pada setiap situasi yang ada</p>
               <hr class="my-4">
               <p>Tapi tidak perlu khawatir kami selalu ada untuk kamu <3</p>
+                <asp:Label ID="lblInfo" CssClass="text-success font-weight-bold" runat="server" Text=""></asp:Label>
             </div>
             <!-- ////////////////////////// End Jumbotron /////////////////////////-->
             <div class="row">   

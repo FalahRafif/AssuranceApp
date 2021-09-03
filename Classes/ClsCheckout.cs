@@ -37,7 +37,7 @@ namespace AssuranceApp.Classes
                 throw ex;
             }
         }
-        public static DataTable getPolisByIdAndStatus(int idProduct, string status)
+        public static DataTable getPolisByIdStatusIdNasabah(int idProduct, string status, int idNasabah)
         {
             try
             {
@@ -51,7 +51,7 @@ namespace AssuranceApp.Classes
                 SqlConn.Open();
                 cmd.Connection = SqlConn;
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = $"select * from TbPolis where IdProductAssurance ={idProduct} AND StatusPolis='{status}'";
+                cmd.CommandText = $"select * from TbPolis where IdProductAssurance ={idProduct} AND StatusPolis='{status}' AND idNasabah='{idNasabah}'";
                 da.SelectCommand = cmd;
                 da.Fill(DtAssuransi);
                 SqlConn.Close();
