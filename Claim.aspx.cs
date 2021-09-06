@@ -69,7 +69,7 @@ namespace AssuranceApp
             Dt = ClsClaim.getPolisByIdPolis(Convert.ToInt32(idPolis));
             var DtTable = Dt.Rows[0].ItemArray.Select(x => x.ToString()).ToArray();
 
-            if(totalClaim >= Convert.ToInt32(DtTable[13]))
+            if(totalClaim >= Convert.ToInt32(DtTable[14]))
             {
                 Session["error"] = "Banyak Claim telah melebihi Benefit";
                 Response.Redirect($"~/Claim.aspx?idPolis={idPolis}");
@@ -79,7 +79,7 @@ namespace AssuranceApp
             DataTable DtCekClaim = new DataTable();
             DtCekClaim = ClsClaim.getClaimByIdPolis(Convert.ToInt32(idPolis));
 
-            if (DtCekClaim.Rows.Count >= Convert.ToInt32(DtTable[14]))
+            if (DtCekClaim.Rows.Count >= Convert.ToInt32(DtTable[15]))
             {
                 Session["error"] = "Claim Sudah mencapai Batas";
                 Response.Redirect($"~/Claim.aspx?idPolis={idPolis}");

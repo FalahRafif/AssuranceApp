@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Checkout.aspx.cs" Inherits="AssuranceApp.Checkout" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CheckoutBukti.aspx.cs" Inherits="AssuranceApp.CheckoutBukti" %>
 
 <!DOCTYPE html>
 
@@ -71,42 +71,26 @@
 
                              <!-- ////////////////////////// End show data asuransi /////////////////////////-->
                             <!-- ////////////////////////// Data payment /////////////////////////-->
-                            <h4>Payment :</h4>
+                            <h4>Upload Bukti Pembayaran :</h4>
                              <hr />
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Pilih Payment</label>
-
+                                        <label for="exampleInputEmail1">Upload Bukti Pembayaran</label>
+                                        <small>File tidak boleh lebih dari 10 MB</small>
                                         <asp:TextBox ID="txtIdProduct" Style="display: none" runat="server"></asp:TextBox>
 
-                                        <asp:DropDownList ID="ddwnPayment" CssClass="form-control" runat="server">
-                                            <asp:ListItem Text="BCA" />
-                                            <asp:ListItem Text="Mandiri" />
-                                            <asp:ListItem Text="BRI (BRIVA)" />
-                                            <asp:ListItem Text="BNI" />
-                                            <asp:ListItem Text="Mandiri Syariah" />
-                                        </asp:DropDownList>
+                                        <asp:FileUpload ID="FlUBuktiBayar" CssClass="form-control" runat="server" required/>
+                                        
                                       </div>
                                 </div>
                                 <div class="col-sm-4">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Card Number</label>
-                                        <asp:TextBox ID="txtCard" CssClass="form-control" runat="server" TextMode="Number" required></asp:TextBox>
-                                      </div>
+                                    >
                                 </div>
                                
                             </div>
-                            <asp:Button ID="btnBeli" OnClick="btnBeli_Click" CssClass="btn btn-primary" runat="server" Text="Beli" />
-                            <asp:HyperLink ID="HyperLink4" runat="server" CssClass="btn btn-secondary" NavigateUrl="~/DashboardNasabah.aspx" Text="Kembali" />
-                            <asp:Repeater ID="linkBuktiPembayaran" runat="server">
-                                <HeaderTemplate></HeaderTemplate>
-                                <ItemTemplate>
-                                    <a href="CheckoutBukti.aspx?idProduct=<%# Eval("IdProductAssurance") %>" class="btn btn-success">Upload Bukti Pembayaran</a>
-                                </ItemTemplate>
-                                <FooterTemplate></FooterTemplate>
-                            </asp:Repeater>
-                            
+                            <asp:Button ID="btnBeli" OnClick="btnBeli_Click" CssClass="btn btn-primary" runat="server" Text="Upload Bukti Pembayaran" />
+                            <asp:HyperLink ID="HyperLink4" runat="server" CssClass="btn btn-secondary" NavigateUrl="~/Store.aspx" Text="Kembali" />
                             <asp:Label ID="labelWarning" CssClass="text-danger" runat="server" Text=""></asp:Label>
                         <!-- ////////////////////////// EndData Payment /////////////////////////-->
                     </div>

@@ -11,7 +11,7 @@ namespace AssuranceApp
 {
 
 
-    public partial class Checkout
+    public partial class CheckoutBukti
     {
 
         /// <summary>
@@ -78,22 +78,13 @@ namespace AssuranceApp
         protected global::System.Web.UI.WebControls.TextBox txtIdProduct;
 
         /// <summary>
-        /// ddwnPayment control.
+        /// FlUBuktiBayar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddwnPayment;
-
-        /// <summary>
-        /// txtCard control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCard;
+        protected global::System.Web.UI.WebControls.FileUpload FlUBuktiBayar;
 
         /// <summary>
         /// btnBeli control.
@@ -112,15 +103,6 @@ namespace AssuranceApp
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink HyperLink4;
-
-        /// <summary>
-        /// linkBuktiPembayaran control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater linkBuktiPembayaran;
 
         /// <summary>
         /// labelWarning control.

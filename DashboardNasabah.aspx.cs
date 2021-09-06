@@ -57,7 +57,7 @@ namespace AssuranceApp
 
                     dateCheck1 = Convert.ToDateTime(DtPolisCnvrt1[4]);
 
-                    for (int i = 30; i >= 30 && i < 365; i++)
+                    for (int i = 30; i >= 30 && i <= 365; i++)
                     {
                         if(dateNow1 == dateCheck1.AddDays(i))
                         {
@@ -107,7 +107,7 @@ namespace AssuranceApp
 
                 dateCheck2 = Convert.ToDateTime(DtPolisCnvrt2[4]);
 
-                for (int i = 30; i >= 30; i++)
+                for (int i = 30; i >= 30 && i <= 365; i++)
                 {
                     if (dateNow2 == dateCheck2.AddDays(i))
                     {

@@ -63,7 +63,7 @@ namespace AssuranceApp.Classes
                 throw ex;
             }
         }
-        public static void insertNewPolis(string policyNumber,int idProductAssurance, int idNasabah, string DateStart, string dateExp, string status, string payment, string cardNumber)
+        public static void insertNewPolis(string policyNumber,int idProductAssurance, int idNasabah, string DateStart, string dateExp, string status, string payment, string cardNumber, string buktiBayar)
         {
             try
             {
@@ -76,7 +76,7 @@ namespace AssuranceApp.Classes
                 SqlConn.Open(); 
                 cmd.Connection = SqlConn; 
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = $"insert into TbPolis values('{policyNumber}','{idProductAssurance}','{idNasabah}','{DateStart}', '{dateExp}','{status}','{payment}','{cardNumber}')"; 
+                cmd.CommandText = $"insert into TbPolis values('{policyNumber}','{idProductAssurance}','{idNasabah}','{DateStart}', '{dateExp}','{status}','{payment}','{cardNumber}','{buktiBayar}')"; 
                 cmd.ExecuteNonQuery(); 
                 SqlConn.Close(); 
 

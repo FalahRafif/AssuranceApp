@@ -84,6 +84,7 @@
     <Content Include="asset\js\popper.min.js" />
     <Content Include="Cancel.aspx" />
     <Content Include="Checkout.aspx" />
+    <Content Include="CheckoutBukti.aspx" />
     <Content Include="Claim.aspx" />
     <Content Include="DashboardNasabah.aspx" />
     <Content Include="Login.aspx" />
@@ -107,6 +108,13 @@
     </Compile>
     <Compile Include="Checkout.aspx.designer.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckoutBukti.aspx.cs">
+      <DependentUpon>CheckoutBukti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckoutBukti.aspx.designer.cs">
+      <DependentUpon>CheckoutBukti.aspx</DependentUpon>
     </Compile>
     <Compile Include="Claim.aspx.cs">
       <DependentUpon>Claim.aspx</DependentUpon>
@@ -188,7 +196,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="asset\img\bukti_bayar\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
