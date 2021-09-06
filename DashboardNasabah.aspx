@@ -79,8 +79,9 @@
                                                     <p>Date Start : <%# ((DateTime)Eval("DateStart")).ToString("yyyy/MM//dd") %></p>
                                                     <p>Date Expired : <%# ((DateTime)Eval("dateExp")).ToString("yyyy/MM//dd") %></p>
                                                     <p>Max claim : <%# Eval("MaxClaim") %></p>
-                                                    <p>Total Claim : ??</p>
+                                                    <%--<p>Total Claim : ??</p>--%>
                                                     <a href="claim.aspx?idPolis=<%# Eval("idPolis") %>" class="btn btn-primary">Claim Assuransi</a>
+                                                    <a href="Cancel.aspx?idPolis=<%# Eval("idPolis") %>" class="btn btn-danger">Cancel Assuransi</a>
                                                 </div>
                                        
                                             </div>

@@ -95,13 +95,13 @@ namespace AssuranceApp
             // gather data
             int idPolis = Convert.ToInt32(DtPolis[0]);
             string notifStatus = "Buy";
-            string msg = $"Nasabah Telah Membeli Assuransi : {DtPolis[10]}";
+            string msg = $"Nasabah Telah Membeli Assuransi : {DtPolis[10]}, dengan Policy Number {policyNumber}";
             string notifDate = notifTime.ToString("yyyy-MM-dd");
 
             //insert data
             ClsCheckout.InsertNotification(idPolis, idNasabah, notifStatus, msg, notifDate);
 
-            Session["info"] = $"Nasabah Berhasil Membeli Assuransi {DtPolis[10]}";
+            Session["info"] = $"Nasabah Berhasil Membeli Assuransi {DtPolis[10]}, dengan Policy Number {policyNumber}";
             Response.Redirect("~/DashboardNasabah.aspx");
         }
     }

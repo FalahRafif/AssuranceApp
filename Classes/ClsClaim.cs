@@ -25,7 +25,7 @@ namespace AssuranceApp.Classes
                 SqlConn.Open();
                 cmd.Connection = SqlConn;
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = $"select * from TbPolis, TbProductAssurance where TbProductAssurance.IdProductAssurance = TbPolis.IdProductAssurance AND idPolis={idPolis} AND statuspolis='Inforce'";
+                cmd.CommandText = $"select * from TbPolis, TbProductAssurance where TbProductAssurance.IdProductAssurance = TbPolis.IdProductAssurance AND idPolis={idPolis}";
                 da.SelectCommand = cmd;
                 da.Fill(DtAssuransi);
                 SqlConn.Close();

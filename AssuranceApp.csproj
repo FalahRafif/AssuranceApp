@@ -82,6 +82,7 @@
     <Content Include="asset\js\jquery-3.5.1.slim.min.js" />
     <Content Include="asset\js\jquery.dataTables.min.js" />
     <Content Include="asset\js\popper.min.js" />
+    <Content Include="Cancel.aspx" />
     <Content Include="Checkout.aspx" />
     <Content Include="Claim.aspx" />
     <Content Include="DashboardNasabah.aspx" />
@@ -93,6 +94,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cancel.aspx.cs">
+      <DependentUpon>Cancel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cancel.aspx.designer.cs">
+      <DependentUpon>Cancel.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Checkout.aspx.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -107,6 +115,7 @@
     <Compile Include="Claim.aspx.designer.cs">
       <DependentUpon>Claim.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Classes\ClsCancel.cs" />
     <Compile Include="Classes\ClsCheckout.cs" />
     <Compile Include="Classes\ClsClaim.cs" />
     <Compile Include="Classes\ClsDashboardNasabah.cs" />

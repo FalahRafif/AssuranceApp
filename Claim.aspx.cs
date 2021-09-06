@@ -102,15 +102,15 @@ namespace AssuranceApp
 
             ////////////////////// insert notification
             // gather data
-            
-            //string notifStatus = "Claim";
-            //string msg = $"Nasabah telah Mengclaim {DtTable[10]}, Sebesar Rp. {totalClaim}";
-            //string notifDate = dateClaim;
 
-            ////insert data 
-            //ClsCheckout.InsertNotification(idPolis, idNasabah, notifStatus, msg, notifDate);
+            string notifStatus = "Claim";
+            string msg = $"Nasabah telah Mengclaim {DtTable[10]}, Sebesar Rp. {totalClaim} dengan Policy Number {DtTable[1]}";
+            string notifDate = dateClaim;
 
-            Session["info"] = $"Nasabah Berhasil Claim Assuransi {DtTable[10]}, Sebesar Rp. {totalClaim}";
+            //insert data 
+            ClsCheckout.InsertNotification(idPolis, idNasabah, notifStatus, msg, notifDate);
+
+            Session["info"] = $"Nasabah Berhasil Claim Assuransi {DtTable[10]}, Sebesar Rp. {totalClaim} dengan Policy Number {DtTable[1]}";
 
             Response.Redirect("~/DashboardNasabah.aspx");
         }
