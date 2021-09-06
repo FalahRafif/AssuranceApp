@@ -42,8 +42,8 @@ namespace AssuranceApp
             else if (Session["info"] != null)
             {
                 lblWarning.CssClass = "text-success";
-                lblWarning.Text = Convert.ToString(Session["error"]);
-                Session["error"] = null;
+                lblWarning.Text = Convert.ToString(Session["info"]);
+                Session["info"] = null;
             }
         }
 
