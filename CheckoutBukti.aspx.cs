@@ -72,7 +72,7 @@ namespace AssuranceApp
             string payment = null;
             int idProduct = Convert.ToInt32(txtIdProduct.Text);
             string imgName = FlUBuktiBayar.FileName;
-            string imgPath = "asset/img/bukti_bayar/" + imgName;
+            string imgPath = "asset/img/bukti_bayar/";
             string buktiBayar = imgName;
             int imgSize = FlUBuktiBayar.PostedFile.ContentLength;
 
@@ -81,6 +81,8 @@ namespace AssuranceApp
 
             Random rand = new Random();
             string newImgName = Convert.ToString(rand.Next(100, 999)) + Convert.ToString(rand.Next(100, 999)) + "." + Convert.ToString(format[1]);
+
+            imgPath += newImgName;
 
             //create policy number
 
@@ -125,7 +127,7 @@ namespace AssuranceApp
                 else
                 {
                     // upload file
-                    FlUBuktiBayar.SaveAs(Server.MapPath(newImgName));
+                    FlUBuktiBayar.SaveAs(Server.MapPath(imgPath));
                 }
             }
 
