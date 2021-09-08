@@ -69,7 +69,7 @@ namespace AssuranceApp
             Dt = ClsClaim.getPolisByIdPolis(Convert.ToInt32(idPolis));
             var DtTable = Dt.Rows[0].ItemArray.Select(x => x.ToString()).ToArray();
 
-            if(totalClaim >= Convert.ToInt32(DtTable[14]))
+            if(totalClaim > Convert.ToInt32(DtTable[14]))
             {
                 Session["error"] = "Banyak Claim telah melebihi Benefit";
                 Response.Redirect($"~/Claim.aspx?idPolis={idPolis}");
